@@ -1,7 +1,1946 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages. Yes!</p>
+
+<head>
+    <title>Collective Café</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="author" content="Gary Vaynerchuk">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="My advice for first-time entrepreneurs" />
+    <meta property="og:url" content="" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="My advice for first-time entrepreneurs" />
+    <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/brands.css" integrity="sha384-BKw0P+CQz9xmby+uplDwp82Py8x1xtYPK3ORn/ZSoe6Dk3ETP59WCDnX+fI1XCKK" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css" integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+        #menu,
+        header .title .text {
+            -moz-osx-font-smoothing: grayscale
+        }
+
+        #menu #menu_toc a:after,
+        header:before {
+            content: " "
+        }
+
+        [data-numbered-headings="1111"],
+        [data-numbered-headings="1011"],
+        [data-numbered-headings="1010"],
+        [data-numbered-headings="1001"],
+        [data-numbered-headings="1000"],
+        [data-numbered-headings="1110"],
+        [data-numbered-headings="1101"],
+        [data-numbered-headings="1100"] {
+            counter-reset: h1
+        }
+
+        [data-numbered-headings="1111"] [data-level="1"]:not([data-skip-numbering]),
+        [data-numbered-headings="1110"] [data-level="1"]:not([data-skip-numbering]),
+        [data-numbered-headings="1101"] [data-level="1"]:not([data-skip-numbering]),
+        [data-numbered-headings="1100"] [data-level="1"]:not([data-skip-numbering]) {
+            counter-reset: h2;
+            counter-increment: h1
+        }
+
+        [data-numbered-headings="1111"] [data-level="1"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="1011"] [data-level="1"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="1010"] [data-level="1"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="1001"] [data-level="1"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="1000"] [data-level="1"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="1110"] [data-level="1"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="1101"] [data-level="1"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="1100"] [data-level="1"]:not([data-skip-numbering]):before {
+            content: counter(h1) "\00a0\00a0"
+        }
+
+        [data-numbered-headings="1111"] [data-level="2"]:not([data-skip-numbering]),
+        [data-numbered-headings="0111"] [data-level="2"]:not([data-skip-numbering]),
+        [data-numbered-headings="1110"] [data-level="2"]:not([data-skip-numbering]) {
+            counter-reset: h3;
+            counter-increment: h2
+        }
+
+        [data-numbered-headings="1111"] [data-level="2"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="1110"] [data-level="2"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="1101"] [data-level="2"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="1100"] [data-level="2"]:not([data-skip-numbering]):before {
+            content: counter(h1) "." counter(h2) "\00a0\00a0"
+        }
+
+        [data-numbered-headings="1111"] [data-level="3"]:not([data-skip-numbering]),
+        [data-numbered-headings="1011"] [data-level="3"]:not([data-skip-numbering]),
+        [data-numbered-headings="0111"] [data-level="3"]:not([data-skip-numbering]),
+        [data-numbered-headings="0011"] [data-level="3"]:not([data-skip-numbering]) {
+            counter-reset: h4;
+            counter-increment: h3
+        }
+
+        [data-numbered-headings="1111"] [data-level="3"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="1110"] [data-level="3"]:not([data-skip-numbering]):before {
+            content: counter(h1) "." counter(h2) "." counter(h3) "\00a0\00a0"
+        }
+
+        [data-numbered-headings="1111"] [data-level="4"]:not([data-skip-numbering]),
+        [data-numbered-headings="1011"] [data-level="4"]:not([data-skip-numbering]),
+        [data-numbered-headings="1001"] [data-level="4"]:not([data-skip-numbering]),
+        [data-numbered-headings="0111"] [data-level="4"]:not([data-skip-numbering]),
+        [data-numbered-headings="0101"] [data-level="4"]:not([data-skip-numbering]),
+        [data-numbered-headings="0011"] [data-level="4"]:not([data-skip-numbering]),
+        [data-numbered-headings="0001"] [data-level="4"]:not([data-skip-numbering]),
+        [data-numbered-headings="1101"] [data-level="4"]:not([data-skip-numbering]) {
+            counter-increment: h4
+        }
+
+        [data-numbered-headings="1111"] [data-level="4"]:not([data-skip-numbering]):before {
+            content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "\00a0\00a0"
+        }
+
+        [data-numbered-headings="1010"] [data-level="3"]:not([data-skip-numbering]),
+        [data-numbered-headings="0110"] [data-level="3"]:not([data-skip-numbering]),
+        [data-numbered-headings="0010"] [data-level="3"]:not([data-skip-numbering]),
+        [data-numbered-headings="1110"] [data-level="3"]:not([data-skip-numbering]) {
+            counter-increment: h3
+        }
+
+        [data-numbered-headings="1101"] [data-level="2"]:not([data-skip-numbering]) {
+            counter-reset: h4;
+            counter-increment: h2
+        }
+
+        [data-numbered-headings="1101"] [data-level="4"]:not([data-skip-numbering]):before {
+            content: counter(h1) "." counter(h2) "." counter(h4) "\00a0\00a0"
+        }
+
+        [data-numbered-headings="0100"] [data-level="2"]:not([data-skip-numbering]),
+        [data-numbered-headings="1100"] [data-level="2"]:not([data-skip-numbering]) {
+            counter-increment: h2
+        }
+
+        [data-numbered-headings="1011"] [data-level="1"]:not([data-skip-numbering]),
+        [data-numbered-headings="1010"] [data-level="1"]:not([data-skip-numbering]) {
+            counter-reset: h3;
+            counter-increment: h1
+        }
+
+        [data-numbered-headings="1011"] [data-level="3"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="1010"] [data-level="3"]:not([data-skip-numbering]):before {
+            content: counter(h1) "." counter(h3) "\00a0\00a0"
+        }
+
+        [data-numbered-headings="1011"] [data-level="4"]:not([data-skip-numbering]):before {
+            content: counter(h1) "." counter(h3) "." counter(h4) "\00a0\00a0"
+        }
+
+        [data-numbered-headings="1001"] [data-level="1"]:not([data-skip-numbering]) {
+            counter-reset: h4;
+            counter-increment: h1
+        }
+
+        [data-numbered-headings="1001"] [data-level="4"]:not([data-skip-numbering]):before {
+            content: counter(h1) "." counter(h4) "\00a0\00a0"
+        }
+
+        [data-numbered-headings="1000"] [data-level="1"]:not([data-skip-numbering]) {
+            counter-increment: h1
+        }
+
+        [data-numbered-headings="0111"],
+        [data-numbered-headings="0110"],
+        [data-numbered-headings="0101"],
+        [data-numbered-headings="0100"] {
+            counter-reset: h2
+        }
+
+        [data-numbered-headings="0111"] [data-level="2"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="0110"] [data-level="2"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="0101"] [data-level="2"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="0100"] [data-level="2"]:not([data-skip-numbering]):before {
+            content: counter(h2) "\00a0\00a0"
+        }
+
+        [data-numbered-headings="0111"] [data-level="3"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="0110"] [data-level="3"]:not([data-skip-numbering]):before {
+            content: counter(h2) "." counter(h3) "\00a0\00a0"
+        }
+
+        [data-numbered-headings="0111"] [data-level="4"]:not([data-skip-numbering]):before {
+            content: counter(h2) "." counter(h3) "." counter(h4) "\00a0\00a0"
+        }
+
+        [data-numbered-headings="0110"] [data-level="2"]:not([data-skip-numbering]) {
+            counter-increment: h2;
+            counter-reset: h3
+        }
+
+        [data-numbered-headings="0101"] [data-level="2"]:not([data-skip-numbering]) {
+            counter-increment: h2;
+            counter-reset: h4
+        }
+
+        [data-numbered-headings="0101"] [data-level="4"]:not([data-skip-numbering]):before {
+            content: counter(h2) "." counter(h4) "\00a0\00a0"
+        }
+
+        [data-numbered-headings="0011"],
+        [data-numbered-headings="0010"] {
+            counter-reset: h3
+        }
+
+        [data-numbered-headings="0011"] [data-level="3"]:not([data-skip-numbering]):before,
+        [data-numbered-headings="0010"] [data-level="3"]:not([data-skip-numbering]):before {
+            content: counter(h3) "\00a0\00a0"
+        }
+
+        [data-numbered-headings="0011"] [data-level="4"]:not([data-skip-numbering]):before {
+            content: counter(h3) "." counter(h4) "\00a0\00a0"
+        }
+
+        [data-numbered-headings="0001"] {
+            counter-reset: h4
+        }
+
+        [data-numbered-headings="0001"] [data-level="4"]:not([data-skip-numbering]):before {
+            content: counter(h4) "\00a0\00a0"
+        }
+
+        #loader {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100
+        }
+
+        #loader .message {
+            width: 90px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -5px auto auto -45px;
+            font-size: 0;
+            opacity: .1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+            filter: alpha(opacity=10);
+            -webkit-animation: fadeIn 1.5s ease-in-out 1 forwards, breath 4s ease-in-out 1s infinite;
+            -moz-animation: fadeIn 1.5s ease-in-out 1 forwards, breath 4s ease-in-out 1s infinite;
+            -o-animation: fadeIn 1.5s ease-in-out 1 forwards, breath 4s ease-in-out 1s infinite;
+            -ms-animation: fadeIn 1.5s ease-in-out 1 forwards, breath 4s ease-in-out 1s infinite;
+            animation: fadeIn 1.5s ease-in-out 1 forwards, breath 4s ease-in-out 1s infinite
+        }
+
+        #menu #menu_toc a,
+        body[data-menu=opened] #menu,
+        header .title {
+            position: relative
+        }
+
+        body[data-menu=opening] header:not(.transparent) .title,
+        body[data-menu=closing] header:not(.transparent) .title {
+            -webkit-animation-timing-function: cubic-bezier(.28, .11, .32, 1);
+            -moz-animation-timing-function: cubic-bezier(.28, .11, .32, 1);
+            -o-animation-timing-function: cubic-bezier(.28, .11, .32, 1);
+            -ms-animation-timing-function: cubic-bezier(.28, .11, .32, 1)
+        }
+
+        body.loading {
+            overflow: hidden
+        }
+
+        body.loading header {
+            display: none
+        }
+
+        body.loading #document {
+            opacity: 0;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            filter: alpha(opacity=0)
+        }
+
+        #document,
+        #menu *,
+        header * {
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            backface-visibility: hidden
+        }
+
+        #menu,
+        header {
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            top: 0;
+            right: 0;
+            bottom: auto;
+            left: 0
+        }
+
+         .logo img{
+            width: 280px;
+            z-index: 0;
+            /* margin: auto; */
+            /* display: contents; */
+            /* align-items: center; */
+        }
+
+        header {
+            position: fixed;
+            height: 40px;
+            z-index: 20;
+            cursor: pointer;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            -webkit-box-shadow: 0 0 1px;
+            box-shadow: 0 0 1px;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-transition: box-shadow .15s;
+            -moz-transition: box-shadow .15s;
+            -o-transition: box-shadow .15s;
+            -ms-transition: box-shadow .15s;
+            transition: box-shadow .15s
+        }
+
+        header:before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: block;
+            z-index: 0;
+            opacity: .97;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=97)";
+            filter: alpha(opacity=97);
+            cursor: pointer;
+            -webkit-transition: background-color .15s;
+            -moz-transition: background-color .15s;
+            -o-transition: background-color .15s;
+            -ms-transition: background-color .15s;
+            transition: background-color .15s
+        }
+
+        header .title {
+            margin: 0 auto;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: -moz-box;
+            display: flex;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            -o-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -moz-box-pack: center;
+            -o-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            -webkit-transition: opacity .15s;
+            -moz-transition: opacity .15s;
+            -o-transition: opacity .15s;
+            -ms-transition: opacity .15s;
+            transition: opacity .15s
+        }
+
+        header .title .text {
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            text-align: center;
+            opacity: 1;
+            -ms-filter: none;
+            filter: none;
+            -webkit-font-smoothing: antialiased
+        }
+
+        #menu #menu_close,
+        body[data-menu=opened] header {
+            position: absolute
+        }
+
+        header .title .icon {
+            -webkit-flex-shrink: 0;
+            flex-shrink: 0;
+            width: 10px;
+            height: 6px;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMTkyIiB2aWV3Qm94PSIwIDAgMzIwIDE5MiIgdmVyc2lvbj0iMS4xIj48ZyBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjMDAwMDAwIj48cGF0aCBkPSJNMzAwLjYgMEwzMjAgMjAuNyAxNjAgMTkyIDAgMjAuNyAxOS4zIDAgMTYwIDE1MC41IDMwMC42IDBaIi8+PC9nPjwvZz48L3N2Zz4=);
+            -webkit-background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            margin-left: 6px;
+            margin-top: -2px;
+            vertical-align: bottom;
+            opacity: .8;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+            filter: alpha(opacity=80)
+        }
+
+        header.transparent {
+            -webkit-box-shadow: none;
+            box-shadow: none
+        }
+
+        header.transparent:before {
+            background-color: transparent
+        }
+
+        header.transparent .title {
+            opacity: 0;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            filter: alpha(opacity=0)
+        }
+
+        @media all and (max-width:768px) {
+            header {
+                height: 44px
+            }
+            header:after {
+                top: 44px
+            }
+        }
+
+        #menu {
+            height: 0;
+            opacity: 0;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            filter: alpha(opacity=0);
+            position: fixed;
+            z-index: 10;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased
+        }
+
+        #document,
+        #menu #menu_info {
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden
+        }
+
+        #menu #menu_close {
+            top: 15px;
+            right: auto;
+            bottom: auto;
+            left: 15px;
+            opacity: .4;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+            filter: alpha(opacity=40);
+            font-size: 0;
+            width: 12px;
+            height: 12px
+        }
+
+        #menu #menu_info {
+            backface-visibility: hidden;
+            overflow: hidden
+        }
+
+        #menu #menu_info .wrapper {
+            margin: 0 auto;
+            padding: 3.5rem 0 1.75rem
+        }
+
+        #menu #menu_info .title {
+            padding-right: 2rem;
+            margin-bottom: .25rem;
+            text-decoration: none;
+            cursor: pointer
+        }
+
+        #menu #menu_info .meta {
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            opacity: .5;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+            filter: alpha(opacity=50)
+        }
+
+        #menu #menu_info .meta .date {
+            padding-right: .4em
+        }
+
+        #menu #menu_info .meta .reading_time {
+            padding-left: .4em;
+            padding-right: .4em
+        }
+
+        #menu #menu_info .meta .space {
+            padding-left: .4em
+        }
+
+        #menu #menu_info .author {
+            font-size: 0
+        }
+
+        #menu #menu_info .author .image {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: inline-block;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+            margin-right: .625rem
+        }
+
+        #menu #menu_info .author .name {
+            display: inline-block;
+            vertical-align: top;
+            line-height: 2.5rem
+        }
+
+        #menu #menu_toc .wrapper {
+            padding: 0 0 3rem
+        }
+
+        #menu #menu_toc a {
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
+            padding: .875rem 0 .6875rem
+        }
+
+        @media all and (max-width:768px) {
+            #menu #menu_toc a {
+                padding: .8125rem 0 .625rem
+            }
+        }
+
+        #menu #menu_toc a:after {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: auto;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            opacity: .08;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=8)";
+            filter: alpha(opacity=8)
+        }
+
+        #document {
+            height: auto;
+            backface-visibility: hidden;
+            z-index: 14;
+        }
+
+        #safari_transparent_toolbar {
+            position: fixed;
+            top: -100px;
+            right: 0;
+            bottom: auto;
+            left: 0;
+            opacity: .64;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=64)";
+            filter: alpha(opacity=64);
+            height: 100px;
+            background: #fff;
+            z-index: 20;
+            -webkit-transition: opacity .3s;
+            -moz-transition: opacity .3s;
+            -o-transition: opacity .3s;
+            -ms-transition: opacity .3s;
+            transition: opacity .3s;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            backface-visibility: hidden
+        }
+
+        body[data-menu] header .title {
+            -webkit-transition: opacity 0s;
+            -moz-transition: opacity 0s;
+            -o-transition: opacity 0s;
+            -ms-transition: opacity 0s;
+            transition: opacity 0s
+        }
+
+        body[data-menu=opening] header,
+        body[data-menu=opened] header {
+            -webkit-box-shadow: 0 0 1px transparent;
+            box-shadow: 0 0 1px transparent;
+            -webkit-transition: none;
+            -moz-transition: none;
+            -o-transition: none;
+            -ms-transition: none;
+            transition: none
+        }
+
+        body[data-menu=opening] #menu,
+        body[data-menu=opened] #menu {
+            height: auto;
+            min-height: 100vh;
+            opacity: 1;
+            -ms-filter: none;
+            filter: none
+        }
+
+        body[data-menu=opening] #safari_transparent_toolbar,
+        body[data-menu=opened] #safari_transparent_toolbar {
+            opacity: 1;
+            -ms-filter: none;
+            filter: none
+        }
+
+        body[data-menu=opening] header:not(.transparent) .title {
+            -webkit-animation-name: fadeOutUpAlt;
+            -moz-animation-name: fadeOutUpAlt;
+            -o-animation-name: fadeOutUpAlt;
+            -ms-animation-name: fadeOutUpAlt;
+            animation-name: fadeOutUpAlt;
+            -webkit-animation-iteration-count: 1;
+            -moz-animation-iteration-count: 1;
+            -o-animation-iteration-count: 1;
+            -ms-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+            -webkit-animation-duration: .15s;
+            -moz-animation-duration: .15s;
+            -o-animation-duration: .15s;
+            -ms-animation-duration: .15s;
+            animation-duration: .15s;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            -o-animation-fill-mode: forwards;
+            -ms-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            animation-timing-function: cubic-bezier(.28, .11, .32, 1)
+        }
+
+        body[data-menu=opening] header:not(.transparent):before {
+            background-color: transparent;
+            -webkit-transition: background-color .5s;
+            -moz-transition: background-color .5s;
+            -o-transition: background-color .5s;
+            -ms-transition: background-color .5s;
+            transition: background-color .5s
+        }
+
+        body[data-menu=opening] #menu {
+            -webkit-transition: opacity .2s;
+            -moz-transition: opacity .2s;
+            -o-transition: opacity .2s;
+            -ms-transition: opacity .2s;
+            transition: opacity .2s
+        }
+
+        body[data-menu=opening] #menu .wrapper {
+            visibility: hidden;
+            -webkit-animation-name: fadeInFromTop;
+            -moz-animation-name: fadeInFromTop;
+            -o-animation-name: fadeInFromTop;
+            -ms-animation-name: fadeInFromTop;
+            animation-name: fadeInFromTop;
+            -webkit-animation-iteration-count: 1;
+            -moz-animation-iteration-count: 1;
+            -o-animation-iteration-count: 1;
+            -ms-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+            -webkit-animation-duration: .25s;
+            -moz-animation-duration: .25s;
+            -o-animation-duration: .25s;
+            -ms-animation-duration: .25s;
+            animation-duration: .25s;
+            -webkit-animation-delay: .2s;
+            -moz-animation-delay: .2s;
+            -o-animation-delay: .2s;
+            -ms-animation-delay: .2s;
+            animation-delay: .2s;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            -o-animation-fill-mode: forwards;
+            -ms-animation-fill-mode: forwards;
+            animation-fill-mode: forwards
+        }
+
+        body[data-menu=closing] #menu,
+        body[data-menu=closing] header:not(.transparent) .title {
+            -webkit-animation-iteration-count: 1;
+            -moz-animation-iteration-count: 1;
+            -o-animation-iteration-count: 1;
+            -ms-animation-iteration-count: 1;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            -ms-animation-fill-mode: forwards
+        }
+
+        body[data-menu=opened] header:not(.transparent) .title {
+            visibility: hidden
+        }
+
+        body[data-menu=opened] header:not(.transparent):before {
+            background-color: transparent;
+            -webkit-transform: translate3d(0, -10px, 0);
+            -moz-transform: translate3d(0, -10px, 0);
+            -o-transform: translate3d(0, -10px, 0);
+            -ms-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0)
+        }
+
+        body[data-menu=opened] #document {
+            height: 0;
+            overflow: hidden
+        }
+
+        body[data-menu=closing] header:not(.transparent) .title {
+            visibility: hidden;
+            -webkit-animation-name: fadeInFromTopAlt;
+            -moz-animation-name: fadeInFromTopAlt;
+            -o-animation-name: fadeInFromTopAlt;
+            -ms-animation-name: fadeInFromTopAlt;
+            animation-name: fadeInFromTopAlt;
+            animation-iteration-count: 1;
+            -webkit-animation-duration: .1s;
+            -moz-animation-duration: .1s;
+            -o-animation-duration: .1s;
+            -ms-animation-duration: .1s;
+            animation-duration: .1s;
+            -webkit-animation-delay: .1s;
+            -moz-animation-delay: .1s;
+            -o-animation-delay: .1s;
+            -ms-animation-delay: .1s;
+            animation-delay: .1s;
+            -o-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            animation-timing-function: cubic-bezier(.28, .11, .32, 1)
+        }
+
+        body[data-menu=closing] #menu {
+            height: auto;
+            min-height: 100vh;
+            position: fixed;
+            opacity: 1;
+            -ms-filter: none;
+            filter: none;
+            -webkit-animation-name: fadeOut;
+            -moz-animation-name: fadeOut;
+            -o-animation-name: fadeOut;
+            -ms-animation-name: fadeOut;
+            animation-name: fadeOut;
+            animation-iteration-count: 1;
+            -webkit-animation-duration: .15s;
+            -moz-animation-duration: .15s;
+            -o-animation-duration: .15s;
+            -ms-animation-duration: .15s;
+            animation-duration: .15s;
+            -webkit-animation-delay: .2s;
+            -moz-animation-delay: .2s;
+            -o-animation-delay: .2s;
+            -ms-animation-delay: .2s;
+            animation-delay: .2s;
+            -o-animation-fill-mode: forwards;
+            animation-fill-mode: forwards
+        }
+
+        body[data-menu=closing] #menu .wrapper {
+            -webkit-animation-name: fadeOutUp;
+            -moz-animation-name: fadeOutUp;
+            -o-animation-name: fadeOutUp;
+            -ms-animation-name: fadeOutUp;
+            animation-name: fadeOutUp;
+            -webkit-animation-iteration-count: 1;
+            -moz-animation-iteration-count: 1;
+            -o-animation-iteration-count: 1;
+            -ms-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+            -webkit-animation-duration: .2s;
+            -moz-animation-duration: .2s;
+            -o-animation-duration: .2s;
+            -ms-animation-duration: .2s;
+            animation-duration: .2s;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            -o-animation-fill-mode: forwards;
+            -ms-animation-fill-mode: forwards;
+            animation-fill-mode: forwards
+        }
+
+        body[data-menu=closing] #document {
+            height: auto
+        }
+
+        .brand {
+            position: relative;
+            width: 100%;
+            top: 2em;
+            left: 0;
+            margin-left: 4em;
+            max-width: 960px;
+            margin: auto;
+        }
+
+        .brand p[data-block=paragraph] {
+            margin-bottom: 0!important;
+            -webkit-transform: scale(.92);
+            -moz-transform: scale(.92);
+            -o-transform: scale(.92);
+            -ms-transform: scale(.92);
+            transform: scale(.92)
+        }
+
+        .logo {
+            position: absolute;
+            left: 0;
+            top:4px;
+        }
+
+        .brand h2 {
+        float: right;
+        text-align: right;
+        /* margin-right: 4em; */
+        font-family: selectricMono;
+        }
+
+        @-moz-keyframes fadeIn {
+            50%,
+            from {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0)
+            }
+            to {
+                opacity: .1;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+                filter: alpha(opacity=10)
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            50%,
+            from {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0)
+            }
+            to {
+                opacity: .1;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+                filter: alpha(opacity=10)
+            }
+        }
+
+        @-o-keyframes fadeIn {
+            50%,
+            from {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0)
+            }
+            to {
+                opacity: .1;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+                filter: alpha(opacity=10)
+            }
+        }
+
+        @keyframes fadeIn {
+            50%,
+            from {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0)
+            }
+            to {
+                opacity: .1;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+                filter: alpha(opacity=10)
+            }
+        }
+
+        @-moz-keyframes breath {
+            50% {
+                opacity: .5;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+                filter: alpha(opacity=50)
+            }
+        }
+
+        @-webkit-keyframes breath {
+            50% {
+                opacity: .5;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+                filter: alpha(opacity=50)
+            }
+        }
+
+        @-o-keyframes breath {
+            50% {
+                opacity: .5;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+                filter: alpha(opacity=50)
+            }
+        }
+
+        @keyframes breath {
+            50% {
+                opacity: .5;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+                filter: alpha(opacity=50)
+            }
+        }
+
+        @-moz-keyframes fadeOut {
+            from {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none
+            }
+            to {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0)
+            }
+        }
+
+        @-webkit-keyframes fadeOut {
+            from {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none
+            }
+            to {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0)
+            }
+        }
+
+        @-o-keyframes fadeOut {
+            from {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none
+            }
+            to {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0)
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none
+            }
+            to {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0)
+            }
+        }
+
+        @-moz-keyframes fadeInFromTop {
+            from {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                visibility: visible;
+                -webkit-transform: translate3d(0, -20px, 0);
+                -moz-transform: translate3d(0, -20px, 0);
+                -o-transform: translate3d(0, -20px, 0);
+                -ms-transform: translate3d(0, -20px, 0);
+                transform: translate3d(0, -20px, 0)
+            }
+            to {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                visibility: visible;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @-webkit-keyframes fadeInFromTop {
+            from {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                visibility: visible;
+                -webkit-transform: translate3d(0, -20px, 0);
+                -moz-transform: translate3d(0, -20px, 0);
+                -o-transform: translate3d(0, -20px, 0);
+                -ms-transform: translate3d(0, -20px, 0);
+                transform: translate3d(0, -20px, 0)
+            }
+            to {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                visibility: visible;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @-o-keyframes fadeInFromTop {
+            from {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                visibility: visible;
+                -webkit-transform: translate3d(0, -20px, 0);
+                -moz-transform: translate3d(0, -20px, 0);
+                -o-transform: translate3d(0, -20px, 0);
+                -ms-transform: translate3d(0, -20px, 0);
+                transform: translate3d(0, -20px, 0)
+            }
+            to {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                visibility: visible;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes fadeInFromTop {
+            from {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                visibility: visible;
+                -webkit-transform: translate3d(0, -20px, 0);
+                -moz-transform: translate3d(0, -20px, 0);
+                -o-transform: translate3d(0, -20px, 0);
+                -ms-transform: translate3d(0, -20px, 0);
+                transform: translate3d(0, -20px, 0)
+            }
+            to {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                visibility: visible;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @-moz-keyframes fadeOutUp {
+            from {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+            to {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                -webkit-transform: translate3d(0, -20px, 0);
+                -moz-transform: translate3d(0, -20px, 0);
+                -o-transform: translate3d(0, -20px, 0);
+                -ms-transform: translate3d(0, -20px, 0);
+                transform: translate3d(0, -20px, 0)
+            }
+        }
+
+        @-webkit-keyframes fadeOutUp {
+            from {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+            to {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                -webkit-transform: translate3d(0, -20px, 0);
+                -moz-transform: translate3d(0, -20px, 0);
+                -o-transform: translate3d(0, -20px, 0);
+                -ms-transform: translate3d(0, -20px, 0);
+                transform: translate3d(0, -20px, 0)
+            }
+        }
+
+        @-o-keyframes fadeOutUp {
+            from {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+            to {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                -webkit-transform: translate3d(0, -20px, 0);
+                -moz-transform: translate3d(0, -20px, 0);
+                -o-transform: translate3d(0, -20px, 0);
+                -ms-transform: translate3d(0, -20px, 0);
+                transform: translate3d(0, -20px, 0)
+            }
+        }
+
+        @keyframes fadeOutUp {
+            from {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+            to {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                -webkit-transform: translate3d(0, -20px, 0);
+                -moz-transform: translate3d(0, -20px, 0);
+                -o-transform: translate3d(0, -20px, 0);
+                -ms-transform: translate3d(0, -20px, 0);
+                transform: translate3d(0, -20px, 0)
+            }
+        }
+
+        @-moz-keyframes fadeInFromTopAlt {
+            from {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                visibility: visible;
+                -webkit-transform: translate3d(0, -10px, 0);
+                -moz-transform: translate3d(0, -10px, 0);
+                -o-transform: translate3d(0, -10px, 0);
+                -ms-transform: translate3d(0, -10px, 0);
+                transform: translate3d(0, -10px, 0)
+            }
+            50% {
+                opacity: .25;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+                filter: alpha(opacity=25);
+                visibility: visible
+            }
+            to {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                visibility: visible;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @-webkit-keyframes fadeInFromTopAlt {
+            from {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                visibility: visible;
+                -webkit-transform: translate3d(0, -10px, 0);
+                -moz-transform: translate3d(0, -10px, 0);
+                -o-transform: translate3d(0, -10px, 0);
+                -ms-transform: translate3d(0, -10px, 0);
+                transform: translate3d(0, -10px, 0)
+            }
+            50% {
+                opacity: .25;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+                filter: alpha(opacity=25);
+                visibility: visible
+            }
+            to {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                visibility: visible;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @-o-keyframes fadeInFromTopAlt {
+            from {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                visibility: visible;
+                -webkit-transform: translate3d(0, -10px, 0);
+                -moz-transform: translate3d(0, -10px, 0);
+                -o-transform: translate3d(0, -10px, 0);
+                -ms-transform: translate3d(0, -10px, 0);
+                transform: translate3d(0, -10px, 0)
+            }
+            50% {
+                opacity: .25;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+                filter: alpha(opacity=25);
+                visibility: visible
+            }
+            to {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                visibility: visible;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes fadeInFromTopAlt {
+            from {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                visibility: visible;
+                -webkit-transform: translate3d(0, -10px, 0);
+                -moz-transform: translate3d(0, -10px, 0);
+                -o-transform: translate3d(0, -10px, 0);
+                -ms-transform: translate3d(0, -10px, 0);
+                transform: translate3d(0, -10px, 0)
+            }
+            50% {
+                opacity: .25;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+                filter: alpha(opacity=25);
+                visibility: visible
+            }
+            to {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                visibility: visible;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @-moz-keyframes fadeOutUpAlt {
+            from {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+            50% {
+                opacity: .25;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+                filter: alpha(opacity=25)
+            }
+            to {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                -webkit-transform: translate3d(0, -10px, 0);
+                -moz-transform: translate3d(0, -10px, 0);
+                -o-transform: translate3d(0, -10px, 0);
+                -ms-transform: translate3d(0, -10px, 0);
+                transform: translate3d(0, -10px, 0)
+            }
+        }
+
+        @-webkit-keyframes fadeOutUpAlt {
+            from {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+            50% {
+                opacity: .25;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+                filter: alpha(opacity=25)
+            }
+            to {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                -webkit-transform: translate3d(0, -10px, 0);
+                -moz-transform: translate3d(0, -10px, 0);
+                -o-transform: translate3d(0, -10px, 0);
+                -ms-transform: translate3d(0, -10px, 0);
+                transform: translate3d(0, -10px, 0)
+            }
+        }
+
+        @-o-keyframes fadeOutUpAlt {
+            from {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+            50% {
+                opacity: .25;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+                filter: alpha(opacity=25)
+            }
+            to {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                -webkit-transform: translate3d(0, -10px, 0);
+                -moz-transform: translate3d(0, -10px, 0);
+                -o-transform: translate3d(0, -10px, 0);
+                -ms-transform: translate3d(0, -10px, 0);
+                transform: translate3d(0, -10px, 0)
+            }
+        }
+
+        @keyframes fadeOutUpAlt {
+            from {
+                opacity: 1;
+                -ms-filter: none;
+                filter: none;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                -o-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+            50% {
+                opacity: .25;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+                filter: alpha(opacity=25)
+            }
+            to {
+                opacity: 0;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                -webkit-transform: translate3d(0, -10px, 0);
+                -moz-transform: translate3d(0, -10px, 0);
+                -o-transform: translate3d(0, -10px, 0);
+                -ms-transform: translate3d(0, -10px, 0);
+                transform: translate3d(0, -10px, 0)
+            }
+        }
+
+        body,
+        #menu,
+        header:before {
+            background-color: rgba(255, 255, 255, 1)
+        }
+
+        header {
+            color: rgba(0, 0, 0, 0.35)
+        }
+
+        header .title,
+        #menu {
+            color: rgba(0, 0, 0, 0.8)
+        }
+
+        #menu .icon {
+            fill: rgba(0, 0, 0, 0.8)
+        }
+
+        header:after,
+        #menu_toc a:after {
+            background-color: rgba(0, 0, 0, 0.8)
+        }
+
+        body {
+            color: rgba(0, 0, 0, 0.8)
+        }
+
+        [data-block=heading1] {
+            color: rgba(0, 0, 0, 0.8)
+        }
+
+        [data-block=heading2] {
+            color: rgba(0, 0, 0, 0.8)
+        }
+
+        [data-block=heading3] {
+            color: rgba(0, 0, 0, 0.8)
+        }
+
+        [data-block=heading4] {
+            color: rgba(0, 0, 0, 0.8)
+        }
+
+        [data-block=paragraph] {
+            color: rgba(0, 0, 0, 0.8)
+        }
+
+        [data-block=list] {
+            color: rgba(0, 0, 0, 0.8)
+        }
+
+        [data-block=quote] {
+            color: rgba(0, 0, 0, 0.8)
+        }
+
+        [data-object=caption] {
+            color: rgba(0, 0, 0, 0.375)
+        }
+    </style>
+    <style id="computed_style"></style>
+</head>
+
+<body class="loading">
+    <div id="loader">
+        <div class="message">
+            <svg width="90px" height="10px" viewBox="0 0 90 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="loading" stroke="none" stroke-width="1" fill="none" fillpadding-top:6rem;sketch:type="MSPage">
+                    <path d="M0.984,9 L6.24,9 L6.24,7.728 L2.58,7.728 L2.58,padding-bottom:6rem;g-bottom:6rem;z-index: 10;232,7.836 C15.672,7.836 14.532,6.624 14.532,4.752 L14.532,4.656 C14.532,2.808 15.528,1.572 17.208,1.572 C18.888,1.572 19.872,2.88 19.872,4.644 L19.872,4.74 C19.872,6/* z-index: 12; */border-left-width:7rem;border-right-width:7rem;eft-width:7rem;border-right-width:7rem;1.528,7.236 21.528,4.728 L21.528,4.632 C21.528,2.112 19.764,0.3 17.208,0.3 C14.664,0.3 12.864,2.16 12.864,4.668 L12.864,4.764 C12.864,7.236 14.58,9.12 17.208,9.12 L17.208,9.12 Z M27.924,9 L29.424,9 L30.096,6.876 L33.372,6.876 L34.056,9 L35.712,9 L32.88,0.42 L30.792,0.42 L27.924,9 Z M31.74,1.728 L33,5.712 L30.468,5.712 L31.74,1.728 Z M44.616,7.74 L44.616,1.68 L45.54,1.68 C47.556,1.68 48.396,2.796 48.396,4.644 L48.396,4.74 C48.396,6.636 47.472,7.74 45.552,7.74 L44.616,7.74 Z M43.02,9 L45.6,9 C48.612,9 50.064,7.224 50.064,4.728 L50.064,4.62 C50.064,2.124 48.612,0.42 45.624,0.42 L43.02,0.42 L43.02,9 Z M57.636,9 L59.244,9 L59.244,0.42 L57.636,0.42 L57.636,9 Z M67.272,9 L68.724,9 L68.724,2.424 L72.588,9 L74.244,9 L74.244,0.42 L72.792,0.42 L72.792,6.624 L69.18,0.42 L67.272,0.42 L67.272,9 Z M86.064,9.12 C88.488,9.12 89.976,7.68 89.976,5.304 L89.976,4.512 L86.244,4.512 L86.244,5.712 L88.404,5.712 C88.356,6.9 87.696,7.872 86.088,7.872 C84.288,7.872 83.436,6.612 83.436,4.776 L83.436,4.68 C83.436,2.796 84.408,1.548 86.088,1.548 C87.204,1.548 87.972,2.04 88.164,3.18 L89.76,3.18 C89.532,1.128 87.9,0.288 86.064,0.288 C83.556,0.288 81.78,2.112 81.78,4.668 L81.78,4.764 C81.78,7.296 83.316,9.12 86.064,9.12 L86.064,9.12 Z" id="LOADING" fill="#000000" sketch:type="MSShapeGroup"></path>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <header>
+        <div class="title">
+            <div class="text">My advice for first-time entrepreneurs</div>
+            <div class="icon"></div>
+        </div>
+    </header>
+    <div id="menu">
+        <div id="menu_close">
+            <svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g class="icon" id="Menu-F" transform="translate(-14.000000, -51.000000)" fill="#010101">
+                        <path d="M25.2625,51 L19.9875,56.26875 L14.7375,51.025 L14,51.7625 L19.25,57 L14,62.24375 L14.7375,62.975 L19.9875,57.7375 L25.2625,63 L26,62.26875 L20.725,57 L26,51.7375 L25.2625,51 Z"></path>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div id="menu_info">
+            <div class="wrapper">
+                <div class="title">My advice for first-time entrepreneurs</div>
+                <div class="meta"><span data-date="1467233512675" class="date"></span></div>
+                <div class="author">
+                    <div style="background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iNDBweCIgaGVpZ2h0PSI0MHB4IiB2aWV3Qm94PSIwIDAgNDAgNDAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGRlZnM+PHJlY3QgaWQ9InBhdGgtMSIgeD0iMCIgeT0iMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMTAwIj48L3JlY3Q+PC9kZWZzPjxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGlkPSJkZWZhdWx0X3Byb2ZpbGVfcGljdHVyZSI+CjxnIGlkPSJEZWZhdWx0Ij48bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+PHVzZSB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KPC9tYXNrPjx1c2UgaWQ9Ik1hc2siIGZpbGw9IiNGM0YzRjMiIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPjxwYXRoIGQ9Ik0yNy4yMjUzODUxLDEzLjE1Njk1OSBDMjcuMjEzMjU2MiwxMy42NzE1NTg2IDI2LjkxNzc2NzksMTYuMDUxNzI0NiAyNi45OTgwOTk5LDE2Ljc4MTc0NDEgQzI3LjA2NDEwNTgsMTcuMzgzODgyOCAyNy4yMTQzMTA5LDE3LjQzMTYwNzQgMjcuNDUxNzkxMywxNy45Mjc4Mzc5IEMyNy44NjUzMTY3LDE4Ljc5MTI3NTQgMjcuNzI2ODg5LDE5Ljk4MjM2OTEgMjcuNTY4MzM0MywyMC44NTMxMDE1IEMyNy40ODE0MTA1LDIxLjMyOTQ2ODcgMjcuMjk3ODk0OCwyMi4wMDc2MzI4IDI3LjAxOTEwNTgsMjIuMzk2NTQ4OCBDMjYuNzExNzUyMywyMi44MjUxMDM1IDI2LjA5NjQzLDIyLjgyODI2NzUgMjUuODI0NTg0MywyMy4zMjgyNzczIEMyNS40MzI2OCwyNC4wNDg1NDEgMjUuNjUzOTAwNywyNS4wNTkxMDc0IDI1LjQwNjkyODEsMjUuODM2Njc1OCBDMjUuMTI2MjA1NCwyNi43MTg0ODI0IDI0LjQxMTU2NjcsMjYuNzgwNDQ1MyAyNC4zNTc2MDE5LDI3LjkzNDM2MTMgQzI0LjcwODAyMTgsMjcuOTgzODQzNyAyNS4wNTczODcsMjguMDM0MDI5MyAyNS40MDY5MjgxLDI4LjA4NDEyNjkgQzI1Ljc1NzYxMTYsMjguODI5NzkxIDI2LjM5OTgyODQsMzAuMzI5ODIwMyAyNy4wNTU2NjgzLDMwLjc4MTIyNjUgQzI3LjYwNDk4NDcsMzAuOTMxMDggMjguMTU0NjUyNywzMS4wODEwMjE1IDI4LjcwMzcwNTQsMzEuMjMwNjExMyBDMzAuNjI5MjEzMiwzMi4wMjAxMzI4IDMyLjc2ODczNDcsMzIuOTY0OTU3IDM0LjY5ODI4NTUsMzMuNzc4Mzg0NyBDMzYuNDU1MzA3LDM0LjUxOTU2NjQgMzguNTU4OTY5MSwzNC43ODM3NjU2IDM5LjE5Mzk3ODgsMzYuNjI1Njg5NCBDMzkuMTkzOTc4OCwzNy44NzYzNzMgMzkuMzEyMDE1OSw0MC44MzExNjc5IDM5LjI3OTc2MDEsNDIuNDcwMTUyMyBMMS4wMDU1OTAxNiw0Mi40NzAxNTIzIEMwLjk3MzMzNDMwMiw0MC44MzExNjc5IDEuMDkxMTk1NjMsMzcuODc2MzczIDEuMDkxMTk1NjMsMzYuNjI1Njg5NCBDMS43MjYyMDU0LDM0Ljc4Mzc2NTYgMy44Mjk4Njc1MSwzNC41MTk1NjY0IDUuNTg2ODg4OTksMzMuNzc4Mzg0NyBDNy41MTYzNTE4OCwzMi45NjQ5NTcgOS42NTU5NjEyNiwzMi4wMjAxMzI4IDExLjU4MTExNzUsMzEuMjMwNjExMyBDMTIuMTMwNDMzOSwzMS4wODEwMjE1IDEyLjY4MDI3NzcsMzAuOTMxMDggMTMuMjI5NDE4MywzMC43ODEyMjY1IEMxMy44ODUxNzAyLDMwLjMyOTgyMDMgMTQuNTI3NTYyOCwyOC44Mjk3OTEgMTQuODc4MjQ2NCwyOC4wODQxMjY5IEwxNS42NTg0NTE1LDI3Ljg5NDM3MTEgQzE1LjQ4MTE3NjEsMjYuOTA5NDY4NyAxNC44NzE0Nzg4LDI2LjgzMjgyODEgMTQuNjE3Mzg3LDI2LjEzNTc2NzUgQzE0LjUxNzcxOTEsMjUuMDg3MDU2NiAxNC40MTc5NjMyLDI0LjAzNzczMDQgMTQuMzE3ODU1OCwyMi45ODg3NTU4IEMxNC4zMjI2MDE5LDIzLjAzODIzODMgMTMuNjAwNDA0NiwyMi44NTcxODM2IDEzLjUwNTgzNDMsMjIuNzk3OTQ1MyBDMTIuNDg4MDYwOSwyMi4xNjAyMTA5IDEyLjQ2NzMxODcsMTkuNTcwMzM3OSAxMi4zNjk0MDg1LDE4LjQ5MzIzODMgQzEyLjMyNDc2MDEsMTguMDAwODc1IDEzLjAwOTUxNTksMTcuNTk3MzY5MSAxMi44MTkyMzI3LDE2LjY5NDU1NjYgQzExLjcwMzkwMDcsMTEuNDA4OTkwMiAxMy4zMDE0MDA3LDguOTM1Mzk2NDYgMTUuODI3NjQwOSw4LjExNTIwMTE0IEMxNy41ODExNDY4LDcuNDA0NjkzMzMgMjAuODU0ODk2OCw2LjA4NzIxMjg2IDIzLjkwODQ4MDgsNy45NjU1MjM0MSBMMjQuNjY2MTg1OSw4LjY2Nzg1NzM5IEwyNS44OTI0MzU5LDguODc5MjM0MzUgQzI2LjUwNzU4MjMsOS4yMzQ0MDAzNiAyNi45MDAwMTQsMTAuNDEyNTc0MiAyNi45MDAwMTQsMTAuNDEyNTc0MiBDMjcuMjIzMTg3OCwxMS43MTMxNzk3IDI3LjI1NTUzMTYsMTEuODIxNTQ4OCAyNy4yMjUzODUxLDEzLjE1Njk1OSBaIiBpZD0iVXNlciIgZmlsbD0iI0Q0RDRENCIgbWFzaz0idXJsKCNtYXNrLTIpIj48L3BhdGg+PC9nPjwvZz48L2c+PC9zdmc+)" class="image"></div>
+                    <div class="name">Gary Vaynerchuk</div>
+                </div>
+            </div>
+        </div>
+        <div id="menu_toc">
+            <div class="wrapper"></div>
+        </div>
+    </div>
+    <div id="document" data-numbered-headings="0000">
+    <div class="brand">
+      <div class="logo">
+         <img src="logo.png">
+      </div>
+      <h2 data-block="heading2">Café Culturel</h2>
+      </div>
+        <section>
+            <div class="group">
+                <h1 id="node1" data-plain="My advice for first-time entrepreneurs" data-block="heading1" data-skip-numbering="" data-exclude-toc="" data-halign="">My advice for first-time entrepreneurs</h1>
+                <h3 id="node2" data-plain="By Gary Vaynerchuk" data-block="heading3" data-skip-numbering="" data-exclude-toc="" data-halign="">By Gary Vaynerchuk</h3>
+                <p data-block="paragraph">I’ve said it <a href="https://www.garyvaynerchuk.com/the-entrepreneurial-spirit-are-entrepreneurs-born-or-made-2/"> <i class="fab fa-twitter"></i> time and time again</a>: <strong>Entrepreneurship is hard and it’s </strong><a href="https://www.garyvaynerchuk.com/reframing-the-narrative-on-entrepreneurship/"><strong>not for everyone</strong></a>. If, after taking a realistic personal inventory of who you are and what you want to be doing, it turns out that you are ready to take the next steps in starting a business, I want to discuss the advice I always give to first-time entrepreneurs.</p>
+                <h2 id="node3" data-plain="1. Be practical about your money" data-block="heading2" data-skip-numbering="" data-exclude-toc="" data-halign="">1. Be practical about your money</h2>
+                <p data-block="paragraph">The first and most important thing that I tell new entrepreneurs is the importance of practicality when it comes to to money. I’m blown away by all the “entrepreneurs” who start businesses and at launch, don’t realize the importance of generating money and how to manage profits. Instead of focusing on the present financial needs and building an actual company, they are too busy thinking about how much money they’ll be making four years from now. It’s a complete lack of practicality.</p>
+                <p data-block="paragraph"><strong>Cash is oxygen.</strong> How much money do you have to stay afloat and for how long? Do you have one year’s worth of rent and overhead? First-time entrepreneurs always make this mistake and it’s my biggest concern for them. You have to make sure your actions can respond to the bleeding of cash that occurs before you even turn a profit.</p>
+                <p data-block="paragraph">I often see first-time entrepreneurs making one of two mistakes at the start:</p>
+                <ul data-block="list" data-style="decimal">
+                    <li data-object="list_item">They do not have a funded business and haven’t raised venture capital (or any other capital). They only have six months worth of money to make their business goal come true. While they dream up every perfect scenario that will allow them to achieve their dream, by the third day of being “entrepreneurs,” the realization hits that nothing goes perfectly and they run out of cash.</li>
+                    <li data-object="list_item">They are so well funded that they don’t build up the necessary muscle to generate revenue. They are so used to the idea that losing $150,000 in burn rate is “fine” because they have a funded company. Most of their attention and behavior is focused on raising their next round instead of building <a href="https://www.garyvaynerchuk.com/build-a-business-not-a-financial-machine/">an actual, profitable business</a>.</li>
+                </ul>
+                <p data-block="paragraph">No matter the situation, starting a new business, particularly one that requires an upfront financial investment and not just your time, drains money. You need to understand financially what it takes in order to pay for necessities like rent, supplies, and inventory (and that doesn’t even include your personal expenses). A high level of practicality is necessary for success.</p>
+                <h2 id="node4" data-plain="2. Realize that building a business is a huge time commitment" data-block="heading2" data-skip-numbering="" data-exclude-toc="" data-halign="">2. Realize that building a business is a huge time commitment</h2>
+                <p data-block="paragraph">The next thing I remind first-time entrepreneurs is that by starting a business, you have made a decision that does not allow you any time, in your first year, to do anything but build your business. No more binge watching Game of Thrones. You are not allowed to watch The #AskGaryVee Show going forward (maybe…). No more late night parties with your friends. You are in such a Code Red zone that <a href="https://www.youtube.com/watch?v=4fsYWXrGGcE">every minute</a> (let’s call it 18 hours a day if you want this to be successful), needs to be allocated for your business. This even includes time with your family. It’s a substantial sacrifice and you have to realize the level of commitment that is required.</p>
+                <p data-block="paragraph">Also, I was trying to be very kind in the first year because I know we live in a politically correct world where leisure, “me” time, and family time are so important to so many. However, if you have this ambition of building a business, you have to make this mental commitment. Then any time you have for family or leisure time is an added bonus. In fact, you have to ask yourself how big of a business you are actually trying to build. The bigger the business, the more years you’ll need to tack onto year one.</p>
+                <h2 id="node5" data-plain="3. Hold yourself to your word" data-block="heading2" data-skip-numbering="" data-exclude-toc="" data-halign="">3. Hold yourself to your word</h2>
+                <p data-block="paragraph">One of best pieces of business advice I’ve ever received (and one that I try to impart on anyone entering the business world) is that your word is bond. My dad told me this at an early age and it has shaped how I’ve conducted business ever since. He told me once that if I commit to buying 100 cases of wine for the store, and I change my mind the week before it arrives, that I would have to drink all of it because I made the commitment.</p>
+                <p data-block="paragraph">If you make a commitment, no matter what happens, you have to deliver. Not only is your business’s brand at stake, but your personal brand and reputation too. Poor business decisions could put your status as an entrepreneur at risk.</p>
+                <blockquote data-block="quote" data-size="default">
+                    <p data-object="paragraph">Your word is bond.</p>
+                </blockquote>
+                <p data-block="paragraph">While the sources vary, it’s often stated that most businesses will fail within the first 18 months. The number one reason why I think so many businesses fail so quickly is because they don’t realize how hard it is, how “all in” you have to be, and how much talent it takes to be a successful entrepreneur. I’m not promising that following this advice will guarantee your business will survive the first year, but without these considerations, you are not setting yourself up for success.</p>
+                <p data-block="paragraph"><em>PS: This may just be words for you on a screen right now, but I beg you to read this very carefully. Read it and make sure it sinks in. We are absolutely living through the greatest generation of fake entrepreneurship that we’ve seen in a long time. Unfortunately, many people will be hurt both financially and emotionally because of this era. I implore you to take these words seriously.</em></p>
+                <p data-block="paragraph">Source: <a href="http://www.garyvaynerchuk.com/advice-first-time-entrepreneurs/">www.garyvaynerchuk.com/advice-first-time-entrepreneurs/</a></p>
+            </div>
+        </section>
+    </div>
+    <div id="body_width"></div>
+    <div id="safari_transparent_toolbar"></div>
+    <script>
+        ! function() {
+            "use strict";
+
+            function t() {
+                k(), v(), o(), u(), l(), c()
+            }
+
+            function e() {
+                k(), v(), u(), l(), c()
+            }
+
+            function a() {
+                k(), u(), c()
+            }
+
+            function i() {
+                v()
+            }
+
+            function n() {
+                l()
+            }
+
+            function o() {
+                var t = x("#loader");
+                t.parentNode.removeChild(t), N.className = N.className.replace(/loading/g, "")
+            }
+
+            function d() {
+                z(['[data-block="image"] [data-object="source"]', '[data-block="photoset"] [data-object="photoset_image"]'], function(t) {
+                    F.push({
+                        element: t,
+                        ratio: t.getAttribute("data-image-ratio"),
+                        variants: r(t.getAttribute("data-srcset"))
+                    })
+                })
+            }
+
+            function r(t) {
+                return t.split(",").map(function(t) {
+                    var e = t.trim().split(" "),
+                        a = e[0],
+                        i = new Image(0, 0),
+                        n = null,
+                        o = null;
+                    return {
+                        width: parseInt(e[1]),
+                        load: function(t) {
+                            "ready" === n ? (o = null, t(a)) : "loading" === n ? o = t : (n = "loading", o = t, i.setAttribute("src", a), i.addEventListener("load", function() {
+                                n = "ready", o && o(a)
+                            }))
+                        }
+                    }
+                }).sort(function(t, e) {
+                    return t.width - e.width
+                })
+            }
+
+            function c() {
+                F.forEach(function(t) {
+                    var e = s(t);
+                    (!t.currentVariant || t.currentVariant !== e && t.currentVariant.width < e.width) && (t.currentVariant = e, e.load(function(a) {
+                        t.currentVariant === e && (t.element.style.backgroundImage = "url(" + a + ")", t.element.className += " show")
+                    }))
+                })
+            }
+
+            function s(t) {
+                for (var e = t.element.offsetWidth * Y, a = t.variants[t.variants.length - 1], i = t.variants.length - 1; i >= 0; i--) {
+                    var n = t.variants[i];
+                    if (!(n.width >= e)) break;
+                    a = n
+                }
+                return a
+            }
+
+            function u() {
+                z('[data-block="image"]', function(t) {
+                    var e = t.getAttribute("data-size"),
+                        a = t.querySelector('[data-object="source"]'),
+                        i = t.querySelector('[data-object="objects"]'),
+                        n = a.getAttribute("data-image-ratio"),
+                        o = a.getAttribute("data-image-density") || 1,
+                        d = parseInt(a.style.maxWidth) / o;
+                    L.offset;
+                    t.style.width = "", "default" == e ? t.offsetWidth > d && (t.style.width = a.offsetWidth + "px") : "left" != e && "right" != e && "left-offset" != e && "right-offset" != e || t.offsetWidth > a.offsetWidth && (t.style.width = a.offsetWidth + "px"), "cover" != e && (i ? (a.style.minHeight = Math.floor(a.offsetWidth / n) + "px", a.style.paddingTop = 0) : a.style.paddingTop = 100 / n + "%")
+                })
+            }
+
+            function l() {
+                if (q) {
+                    z('[data-block="image"][data-size="cover"] [data-object="source"]', function(t) {
+                        t.style.minHeight = window.innerHeight + "px"
+                    })
+                }
+            }
+
+            function f() {
+                m(), g(), b(), H.addEventListener("click", function() {
+                    N.dataset.menu || h(), "opened" == N.dataset.menu && p({
+                        targetY: V.y,
+                        fadeOut: !0,
+                        animateScroll: !1
+                    })
+                }, !1), x("#menu_info .title").addEventListener("click", function() {
+                    p({
+                        targetY: 0,
+                        fadeOut: !1,
+                        animateScroll: !0
+                    })
+                }, !1)
+            }
+
+            function m() {
+                var t = x("#menu_toc .wrapper"),
+                    e = ['[data-block="heading1"]', '[data-block="heading2"]', '[data-block="heading3"]', '[data-block="heading4"]'];
+                t.setAttribute("data-numbered-headings", I.getAttribute("data-numbered-headings")), z(e, function(e) {
+                    var a = e.getAttribute("data-plain") || "",
+                        i = e.getAttribute("data-exclude-toc"),
+                        n = e.getAttribute("data-skip-numbering");
+                    if (a = a.replace(/^[ \u00A0]*/, "").replace(/[ \u00A0]*$/, "")) {
+                        var o = document.createElement("a");
+                        o.textContent = a, o.setAttribute("data-level", e.getAttribute("data-block").match(/\d$/)[0]), "true" === i && (o.style.position = "absolute", o.style.top = "-10000px"), "true" === n && o.setAttribute("data-skip-numbering", "true"), o.addEventListener("click", function(t) {
+                            t.preventDefault(), p({
+                                target: e,
+                                animateScroll: !0
+                            })
+                        }), t.appendChild(o)
+                    }
+                })
+            }
+
+            function g() {
+                var t = x("#menu_info .meta .date"),
+                    e = new Date(parseInt(t.getAttribute("data-date")));
+                t.textContent = j(e)
+            }
+
+            function b() {
+                var t = x("#menu_info .meta .reading_time");
+                if (t) {
+                    var e = new Date(parseInt(t.getAttribute("data-time")));
+                    t.textContent = W(e)
+                }
+            }
+
+            function h() {
+                V = {
+                    y: window.scrollY,
+                    dh: document.body.clientHeight,
+                    dy: document.body.scrollTop
+                }, N.dataset.menu = "opening", setTimeout(function() {
+                    N.dataset.menu = "opened", window.scrollTo(0, 0)
+                }, 500)
+            }
+
+            function p(t) {
+                var e = t.targetY;
+                if (N.dataset.menu = "closing", I.style.visibility = "hidden", t.target) e = Math.floor(T(t.target) - _);
+                else if (0 !== e) {
+                    var a = document.body.clientHeight;
+                    e = a * (V.dy / V.dh)
+                }
+                t.fadeOut ? setTimeout(function() {
+                    N.removeAttribute("data-menu")
+                }, 400) : N.removeAttribute("data-menu"), setTimeout(function() {
+                    I.style.visibility = "visible"
+                }, 0), w(e, t.animateScroll)
+            }
+
+            function v() {
+                "opening" != N.dataset.menu && "opened" != N.dataset.menu && (window.pageYOffset > 0 ? H.classList.remove("transparent") : H.classList.add("transparent"))
+            }
+
+            function w(t, e) {
+                setTimeout(function() {
+                    var a;
+                    if (0 == e || V.y == t) return void window.scrollTo(0, t);
+                    a = Math.abs(V.y - t) > D ? V.y > t ? t + D : t - D : V.y, window.scrollTo(0, a), y(document.body, t, 400)
+                }, 0)
+            }
+
+            function y(t, e, a) {
+                function i(t, e, a, i) {
+                    return (t /= i / 2) < 1 ? a / 2 * t * t + e : (t--, -a / 2 * (t * (t - 2) - 1) + e)
+                }
+
+                function n() {
+                    if (c) {
+                        u(n);
+                        var l = +new Date,
+                            f = Math.floor(i(l - r, o, d, a));
+                        s ? s === t.scrollTop ? (s = f, t.scrollTop = f) : c = !1 : (s = f, t.scrollTop = f), l > r + a && (t.scrollTop = e, c = !1)
+                    }
+                }
+                var o = t.scrollTop,
+                    d = e - o,
+                    r = +new Date,
+                    c = !0,
+                    s = null,
+                    u = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function(t) {
+                        window.setTimeout(t, 1e3 / 60)
+                    };
+                u(n)
+            }
+
+            function A() {
+                var t = {},
+                    e = window.innerWidth,
+                    a = function(t) {
+                        return e >= t.viewWidth.max ? t.value.max : e <= t.viewWidth.min ? t.value.min : t.value.min + (e - t.viewWidth.min) / (t.viewWidth.max - t.viewWidth.min) * (t.value.max - t.value.min)
+                    };
+                t.bodyWidth = O.clientWidth, t.offset = (e - t.bodyWidth) / 4, t.offset > 256 && (t.offset = 256), t.offsetWidth = t.bodyWidth + 2 * t.offset, t.mainSpacing = a(M.main) / 16, t.mediaSpacing = a(M.media) / 16, t.objectSpacing = a(M.object) / 16, t.objectAltSpacing = a(M.objectAlt) / 16, t.sectionSpacing = a(M.section) / 16, L = t
+            }
+
+            function k() {
+                A(), C.innerHTML = S()
+            }
+
+            function S() {
+                var t = L,
+                    e = function(t) {
+                        return t + "px"
+                    },
+                    a = function(t) {
+                        return t + "rem"
+                    },
+                    i = {
+                        '[data-size="default-offset"]': {
+                            "max-width": e(t.offsetWidth),
+                            "margin-left": e(-t.offset),
+                            "margin-right": e(-t.offset)
+                        },
+                        '[data-block="image"][data-size="left-offset"]': {
+                            width: e(t.bodyWidth / 2 + t.offset),
+                            "margin-left": e(-t.offset)
+                        },
+                        '[data-block="image"][data-size="right-offset"]': {
+                            width: e(t.bodyWidth / 2 + t.offset),
+                            "margin-right": e(-t.offset)
+                        },
+                        "body section": {
+                            "padding-top": a(t.sectionSpacing / 4),
+                            "padding-bottom": a(t.sectionSpacing / 4)
+                        },
+                        "body section:first-of-type": {
+                            "padding-top": a(t.sectionSpacing)
+                        },
+                        "body section:first-of-type > [data-block]:first-child": {
+                            "margin-top": a(-t.sectionSpacing)
+                        },
+                        "body section:last-of-type": {
+                            "padding-bottom": a(t.sectionSpacing)
+                        },
+                        "body section:last-of-type > [data-block]:last-child": {
+                            "margin-bottom": a(-t.sectionSpacing)
+                        },
+                        'body section > [data-block]:last-child [data-object="caption"]': {
+                            "margin-bottom": a(t.sectionSpacing / 2)
+                        },
+                        ".group, #body_width, #menu .wrapper": {
+                            "border-left-width": a(t.mainSpacing),
+                            "border-right-width": a(t.mainSpacing)
+                        },
+                        '[data-block="image"][data-size="left"],[data-block="image"][data-size="left-offset"],[data-block="image"][data-size="right"],[data-block="image"][data-size="right-offset"]': {
+                            "padding-top": a(t.mediaSpacing / 2),
+                            "padding-bottom": a(t.mediaSpacing / 2)
+                        },
+                        '[data-block="image"][data-size="left"],[data-block="image"][data-size="left-offset"]': {
+                            "padding-right": a(t.mediaSpacing / 2)
+                        },
+                        '[data-block="image"][data-size="right"],[data-block="image"][data-size="right-offset"]': {
+                            "padding-left": a(t.mediaSpacing / 2)
+                        },
+                        '[data-block="image"], [data-block="video"], [data-block="photoset"]': {
+                            "margin-top": a(t.mediaSpacing),
+                            "margin-bottom": a(t.mediaSpacing)
+                        },
+                        '[data-size="cover"] [data-object="objects"],[data-size="wide"] [data-object="objects"]': {
+                            "max-width": e(t.bodyWidth + 16 * t.objectSpacing),
+                            margin: [0, a(t.objectSpacing)]
+                        },
+                        '[data-size="default"] [data-object="objects"],[data-size="default-offset"] [data-object="objects"]': {
+                            margin: a(t.objectAltSpacing)
+                        }
+                    },
+                    n = [];
+                for (var o in i) {
+                    var d = i[o],
+                        r = [];
+                    n.push(o, "{");
+                    for (var c in d) {
+                        var s = d[c];
+                        s instanceof Array && (s = s.join(" ")), r.push(c + ":" + s)
+                    }
+                    n.push(r.join(";"), "}")
+                }
+                return n.join("")
+            }
+
+            function j(t) {
+                var e = [E[t.getMonth()], t.getDate()].join(" ");
+                return t.getYear() != (new Date).getYear() && (e += ", " + t.getFullYear()), e
+            }
+
+            function W(t) {
+                var e = Math.trunc(t / 3600),
+                    a = Math.round((t - 3600 * e) / 60),
+                    i = [];
+                return 0 === e && 0 === a && (a = 1), e > 0 && i.push(e, "hours"), a > 0 && i.push(a, "min"), i.join(" ")
+            }
+
+            function x(t, e) {
+                return arguments.length < 2 && (e = t, t = document), t.querySelector(e)
+            }
+
+            function z(t, e) {
+                t instanceof Array && (t = t.join(","));
+                var a = document.querySelectorAll(t);
+                [].forEach.call(a, function(t) {
+                    e(t)
+                })
+            }
+
+            function T(t) {
+                var e = 0;
+                do {
+                    isNaN(t.offsetTop) || (e += t.offsetTop)
+                } while (t = t.offsetParent);
+                return e
+            }
+            var L, E = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                M = {
+                    section: {
+                        viewWidth: {
+                            min: 356,
+                            max: 1024
+                        },
+                        value: {
+                            min: 48,
+                            max: 96
+                        }
+                    },
+                    main: {
+                        viewWidth: {
+                            min: 356,
+                            max: 768
+                        },
+                        value: {
+                            min: 18,
+                            max: 112
+                        }
+                    },
+                    media: {
+                        viewWidth: {
+                            min: 356,
+                            max: 768
+                        },
+                        value: {
+                            min: 36,
+                            max: 64
+                        }
+                    },
+                    object: {
+                        viewWidth: {
+                            min: 356,
+                            max: 960
+                        },
+                        value: {
+                            min: 18,
+                            max: 100
+                        }
+                    },
+                    objectAlt: {
+                        viewWidth: {
+                            min: 356,
+                            max: 960
+                        },
+                        value: {
+                            min: 20,
+                            max: 40
+                        }
+                    }
+                },
+                D = 400,
+                _ = 60,
+                Y = window.devicePixelRatio,
+                q = navigator.userAgent.match("iPhone") && navigator.userAgent.match("AppleWebKit"),
+                N = (x("html"), x("body")),
+                C = (x("head"), x("#computed_style")),
+                H = x("header"),
+                I = (x("#menu"), x("#document")),
+                O = x("#body_width"),
+                F = [],
+                V = {
+                    y: 0
+                };
+            document.addEventListener("readystatechange", function() {
+                    "complete" === document.readyState && e()
+                }), document.addEventListener("DOMContentLoaded", t), window.addEventListener("resize", a), window.addEventListener("scroll", i), window.addEventListener("orientationchange", n),
+                function() {
+                    k(), d(), f(), c()
+                }()
+        }();
+    </script>
 </body>
+
 </html>
